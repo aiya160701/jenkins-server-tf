@@ -1,6 +1,6 @@
 variable "github_web_ipv4_addresses" {
   description = "Github Webhook IPv4 addresses"
-  type = set(string)
+  type        = set(string)
   default = [
     "192.30.252.0/22",
     "185.199.108.0/22",
@@ -11,7 +11,7 @@ variable "github_web_ipv4_addresses" {
 
 variable "github_web_ipv6_addresses" {
   description = "Github Webhook IPv6 addresses"
-  type = set(string)
+  type        = set(string)
   default = [
     "2a0a:a440::/29",
     "2606:50c0::/32"
@@ -30,3 +30,9 @@ variable "jenkins_server_custom_ami" {
   description = "This is pre-configured ami for Jenkins Server with NGINX Proxy "
   default     = "ami-0699aedaa3d0ea70f"
 }
+
+variable "jenkins_public_key" {
+  type      = string
+  sensitive = true
+}
+
